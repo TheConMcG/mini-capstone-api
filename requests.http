@@ -8,10 +8,10 @@ POST http://localhost:3000/products.json
 content-type: application/json
 
 {
-  "input_name": "tomato",
-  "input_price": "1.0",
-  "input_image_url": "alsdkfj",
-  "input_description": "is it really a fruit?"
+  "name": "tomato",
+  "price": "1.0",
+  "image_url": "https://post.healthline.com/wp-content/uploads/2019/10/Tomato_1200x628-facebook.jpg",
+  "description": "is it really a fruit?"
 }
 
 ###
