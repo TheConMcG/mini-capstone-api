@@ -21,6 +21,9 @@ content-type: application/json
 {
   "name": "jackfruit",
   "price": "5",
-  "image_url": "random url",
+  "image_url": "abcdefg",
   "description": "used by vegans for bbq"
 }
+
+###
+DELETE http://localhost:3000/products/7.json

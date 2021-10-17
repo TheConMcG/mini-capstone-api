@@ -29,7 +29,12 @@ class ProductsController < ApplicationController
     product.description = params[:description] || product.description
     product.save
     render json: product.as_json
+  end
 
+  def destroy
+    product = Product.find_by(id: params[:id])
+    product.destroy
+    render json: {message: "Recipe has been removed."}
   end
     
 end
