@@ -1,19 +1,4 @@
 class ProductsController < ApplicationController
-
-  # def total_product
-  #   total_product = Product.all
-  #   render json: {total_product: total_product.as_json}
-  # end
-
-  # def product_one
-  #   product_one = Product.find_by(id: 1)
-  #   render json: {product_one: product_one.as_json}
-  # end
-
-  # def query
-  #   day = params["day"]
-  #   render json: {message: "today is #{day}"
-  # end
     
   def index
     products = Product.all
@@ -28,12 +13,23 @@ class ProductsController < ApplicationController
   def create
     product = Product.new(
       name: params[:input_name],
-      price: params[:input_price],
+      price: params[:input_price].to_i,
       image_url: params[:input_image_url],
       description: params[:input_description]
     )
     product.save
     render json: product.as_json
+  end
+
+  def update
+    product = Product.find_by(id: params[:id])
+    product.name = params[:name] || product.name
+    product.price = params[:price] || product.price
+    product.image_url = params[:image_url] || product.image_url
+    product.description = params[:description] || product.description
+    product.save
+    render json: product.as_json
+
   end
     
 end

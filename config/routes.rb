@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get "/products/:id" => "products#show" #user sees particular product
 
-  post "/products" => "products#create" #
+  post "/products" => "products#create" #allows user to create new product through post url params
+
+  patch "/products/:id" => "products#update" #allows user to update existing product through post url params
+  
 end
 

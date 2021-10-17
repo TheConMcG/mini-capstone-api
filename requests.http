@@ -8,8 +8,19 @@ POST http://localhost:3000/products.json
 content-type: application/json
 
 {
-  "input_name": "pineapple",
-  "input_price": "2",
+  "input_name": "tomato",
+  "input_price": "1.0",
   "input_image_url": "alsdkfj",
-  "input_description": "too sweet"
+  "input_description": "is it really a fruit?"
+}
+
+###
+PATCH http://localhost:3000/products/4.json
+content-type: application/json
+
+{
+  "name": "jackfruit",
+  "price": "5",
+  "image_url": "random url",
+  "description": "used by vegans for bbq"
 }
