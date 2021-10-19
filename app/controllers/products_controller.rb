@@ -2,12 +2,12 @@ class ProductsController < ApplicationController
     
   def index
     products = Product.all
-    render json: products.as_json
+    render json: products
   end
 
   def show
     product = Product.find_by(id: params[:id])
-    render json: product.as_json(methods: [:tax, :total])
+    render json: product
   end
 
   def create
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
       description: params[:description]
     )
     product.save
-    render json: product.as_json
+    render json: product
   end
 
   def update
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
     product.save
-    render json: product.as_json
+    render json: product
   end
 
   def destroy

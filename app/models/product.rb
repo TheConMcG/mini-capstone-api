@@ -7,11 +7,12 @@ class Product < ApplicationRecord
   # end
 
   def is_discounted?
-    if price.to_i < 10
-      return true
-    else
-      return false
-    end
+    price < 10
+    # if price.to_i < 10
+    #   return true
+    # else
+    #   return false
+    # end
   end
 
   def tax
@@ -23,5 +24,4 @@ class Product < ApplicationRecord
     @total = price.to_i + tax
     return @total
   end
-
 end
