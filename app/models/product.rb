@@ -24,4 +24,5 @@ class Product < ApplicationRecord
     @total = price.to_i + tax
     return @total
   end
+
 end

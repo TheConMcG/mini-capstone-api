@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# product = Product.new(
-    # name: , 
-    # price: , 
-    # image_url: , 
-    # description: 
+
+    # Product.new(
+    #   name: Faker::Food.unique.fruits,
+    #   price: rand(1..10), 
+    #   image_url: Faker::, 
+    #   description: 
     # )
