@@ -22,7 +22,7 @@ class Product < ApplicationRecord
 
   def total
     @total = price.to_i + tax
-    return @total
+    return "$" + "#{@total}"
   end
 
 end
