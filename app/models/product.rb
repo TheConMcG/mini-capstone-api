@@ -6,6 +6,11 @@ class Product < ApplicationRecord
   #   return "This recipe takes #{hours} hour(s) and #{minutes} minute(s) to make this recipe."
   # end
 
+  validates :name, :price, presence: true
+  validates :name, uniqueness: true
+  validates :description, length: {in: 10..500}
+  validates :price, numericality: {greater_than: 0}
+
   def is_discounted?
     price < 10
     # if price.to_i < 10

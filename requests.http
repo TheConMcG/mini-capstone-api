@@ -9,7 +9,7 @@ content-type: application/json
 
 {
   "name": "tomato",
-  "price": "1.0",
+  "price": 1,
   "image_url": "https://post.healthline.com/wp-content/uploads/2019/10/Tomato_1200x628-facebook.jpg",
   "description": "is it really a fruit?"
 }
