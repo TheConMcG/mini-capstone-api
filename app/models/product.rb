@@ -11,6 +11,14 @@ class Product < ApplicationRecord
   validates :description, length: {in: 10..500}
   validates :price, numericality: {greater_than: 0}
 
+  belongs_to :supplier
+
+  has_many :imagesw
+
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+
   def is_discounted?
     price < 10
     # if price.to_i < 10

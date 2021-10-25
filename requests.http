@@ -8,10 +8,10 @@ POST http://localhost:3000/products.json
 content-type: application/json
 
 {
-  "name": "tomato",
+  "name": "tomatoee",
   "price": 1,
-  "image_url": "https://post.healthline.com/wp-content/uploads/2019/10/Tomato_1200x628-facebook.jpg",
-  "description": "is it really a fruit?"
+  "description": "is it really a fruit?",
+  "supplier_id": 1
 }
 
 ###
@@ -21,7 +21,6 @@ content-type: application/json
 {
   "name": "jackfruitsi",
   "price": "11",
-  "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fhealth.clevelandclinic.org%2Fwhat-is-jackfruit-and-is-it-healthy%2F&psig=AOvVaw0J-Jv8aLI3m-UN7S1i-flh&ust=1634576113320000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCICNp9b00fMCFQAAAAAdAAAAABAE",
   "description": "us"
 }
 
@@ -36,4 +35,15 @@ content-type: application/json
   "name": "Target",
   "email": "target@target.com",
   "phone_number": "666-666-6666"
+}
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "George Washington",
+  "email": "cannottellalie@george.com",
+  "password": "password",
+  "password_confirmation": "password"
 }
