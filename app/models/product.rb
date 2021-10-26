@@ -13,7 +13,7 @@ class Product < ApplicationRecord
 
   belongs_to :supplier
 
-  has_many :imagesw
+  has_many :images
 
   # def supplier
   #   Supplier.find_by(id: supplier_id)

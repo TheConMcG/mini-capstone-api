@@ -1,4 +1,5 @@
-GET http://localhost:3000/products
+GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUyOTIyMDB9.SL8k3Nk4q9Ol9QAqg3hQQJXGQv_NC2bD_-gY7ilqUmA
 
 ###
 GET http://localhost:3000/products/1.json
@@ -46,4 +47,13 @@ Content-Type: application/json
   "email": "cannottellalie@george.com",
   "password": "password",
   "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "cannottellalie@george.com",
+  "password": "password"
 }
