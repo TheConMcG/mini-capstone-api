@@ -1,3 +1,4 @@
+###
 GET http://localhost:3000/products.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUyOTIyMDB9.SL8k3Nk4q9Ol9QAqg3hQQJXGQv_NC2bD_-gY7ilqUmA
 
@@ -7,17 +8,19 @@ GET http://localhost:3000/products/1.json
 ###
 POST http://localhost:3000/products.json
 content-type: application/json
+Authorization: Bearer {{jwtben}}
 
 {
-  "name": "tomatoee",
+  "name": "cucumber",
   "price": 1,
-  "description": "is it really a fruit?",
+  "description": "not a fruit",
   "supplier_id": 1
 }
 
 ###
 PATCH http://localhost:3000/products/8.json
 content-type: application/json
+Authorization: Bearer {{jwtben}}
 
 {
   "name": "jackfruitsi",
@@ -27,6 +30,7 @@ content-type: application/json
 
 ###
 DELETE http://localhost:3000/products/7.json
+Authorization: Bearer {{jwtben}}
 
 ###
 POST http://localhost:3000/suppliers.json
@@ -43,8 +47,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "George Washington",
-  "email": "cannottellalie@george.com",
+  "name": "Benjamin Franklin",
+  "email": "frankie@ben.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -54,6 +58,30 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "cannottellalie@george.com",
+  "email": "frankie@ben.com",
   "password": "password"
 }
+
+### Orders create
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+Authorization: Bearer {{jwtgeorge}}
+
+{
+  "product_id": 8,
+  "quantity": 4
+  }
+
+### Orders index
+GET http://localhost:3000/orders.json
+Authorization: Bearer {{jwtgeorge}}
+
+### Orders show
+GET http://localhost:3000/orders/8.json
+Authorization: Bearer {{jwtgeorge}}
+
+###
+@jwtgeorge = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUzNzc2NTV9.7xJ2Ohn9dfr2TVCuqfNhWesNTLEYaF-4steH2hZwCzI
+
+###
+@jwtben = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODc1MDJ9.CgLSFZVVWlUQBg53cFsVLrTgNa6fi9Ko1qQpmr3Y-3k

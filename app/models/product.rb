@@ -13,6 +13,8 @@ class Product < ApplicationRecord
 
   belongs_to :supplier
 
+  has_many :orders
+
   has_many :images
 
   # def supplier
@@ -35,7 +37,7 @@ class Product < ApplicationRecord
 
   def total
     @total = price.to_i + tax
-    return "$" + "#{@total}"
+    return @total
   end
 
 end
