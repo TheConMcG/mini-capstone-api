@@ -105,6 +105,9 @@ Authorization: Bearer {{jwtnapolean}}
 {
   "product_id": 1,
   "quantity": 2,
-  "order_id": 1,
-  "status": "carted"
+  "order_id": 1
 }
+
+### CartedProducts index
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwtnapolean}}

@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   patch "/images/:id" => "images#update"
 
+  get "/carted_products" => "carted_products#index"
+
   post "/carted_products" => "carted_products#create"
 
 end
