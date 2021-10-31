@@ -8,13 +8,13 @@ GET http://localhost:3000/products/1.json
 ###
 POST http://localhost:3000/products.json
 content-type: application/json
-Authorization: Bearer {{jwtben}}
+Authorization: Bearer {{jwtnapolean}}
 
 {
-  "name": "winter melon",
+  "name": "Eggs: one dozen",
   "price": 4,
-  "description": "is it cold?",
-  "supplier_id": 1
+  "description": "fried, scrambled, boiled. delicious and nutritious",
+  "supplier_id": 2
 }
 
 ###
@@ -80,7 +80,7 @@ Authorization: Bearer {{jwtnapolean}}
 GET http://localhost:3000/orders/15.json
 Authorization: Bearer {{jwtnapolean}}
 
-###
+### Image update
 PATCH http://localhost:3000/images/5.json
 content-type: application/json
 Authorization: Bearer {{jwtnapolean}}

@@ -6,18 +6,19 @@ class Product < ApplicationRecord
   #   return "This recipe takes #{hours} hour(s) and #{minutes} minute(s) to make this recipe."
   # end
 
-  validates :name, :price, presence: true
-  validates :name, uniqueness: true
-  validates :description, length: {in: 10..500}
-  validates :price, numericality: {greater_than: 0}
-
   belongs_to :supplier
 
   has_many :orders
 
   has_many :images
 
-  has_many :CategoryProduct
+  has_many :category_products
+  has_many :categories, through: :category_products
+
+  validates :name, :price, presence: true
+  validates :name, uniqueness: true
+  validates :description, length: {in: 10..500}
+  validates :price, numericality: {greater_than: 0}
 
   # def supplier
   #   Supplier.find_by(id: supplier_id)
@@ -41,5 +42,10 @@ class Product < ApplicationRecord
     @total = price.to_i + tax
     return @total
   end
+
+  # def category_name
+  #   name = category.name
+  # end
+  # return to later?
 
 end

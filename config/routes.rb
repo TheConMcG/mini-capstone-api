@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   get "/orders/:id" => "orders#show"
 
   patch "/images/:id" => "images#update"
-  
+
 end
 

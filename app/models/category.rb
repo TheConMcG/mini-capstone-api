@@ -1,9 +1,8 @@
 class Category < ApplicationRecord
 
-  def products
-    products = CategoryProduct.find_by(:category_id)
-  end
-
-  has_many :CategoryProduct
-
+  has_many :category_products
+  has_many :products, through: :category_products
+  
 end
+
+
