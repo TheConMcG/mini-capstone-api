@@ -1,4 +1,13 @@
 ###
+@jwtgeorge = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUzNzc2NTV9.7xJ2Ohn9dfr2TVCuqfNhWesNTLEYaF-4steH2hZwCzI
+
+###
+@jwtben = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODc1MDJ9.CgLSFZVVWlUQBg53cFsVLrTgNa6fi9Ko1qQpmr3Y-3k
+
+###
+@jwtnapolean = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU3ODQwMzV9.Qy92ave1kIABnVyndMetEWSWPYlIAdtk1sakdnCKbWA
+
+###
 GET http://localhost:3000/products.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUyOTIyMDB9.SL8k3Nk4q9Ol9QAqg3hQQJXGQv_NC2bD_-gY7ilqUmA
 
@@ -58,7 +67,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "@napolean.com",
+  "email": "complex@napolean.com",
   "password": "password"
 }
 
@@ -68,8 +77,7 @@ Content-Type: application/json
 Authorization: Bearer {{jwtnapolean}}
 
 {
-  "product_id": 1,
-  "quantity": 5
+ 
   }
 
 ### Orders index
@@ -89,12 +97,14 @@ Authorization: Bearer {{jwtnapolean}}
   "url": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Ffresh-green-apple-26821143.jpg&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fgreen-apple.html&tbnid=M5m_hiAFCtinwM&vet=12ahUKEwi_5IjXg-zzAhWjoK0KHaFcBK8QMygGegUIARDRAQ..i&docid=PJztneRzqQ6dfM&w=800&h=533&q=apple%20stock%20photo&ved=2ahUKEwi_5IjXg-zzAhWjoK0KHaFcBK8QMygGegUIARDRAQ"
 }
 
+### Create carted_products
+POST http://localhost:3000/carted_products.json
+content-type: application/json
+Authorization: Bearer {{jwtnapolean}}
 
-###
-@jwtgeorge = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUzNzc2NTV9.7xJ2Ohn9dfr2TVCuqfNhWesNTLEYaF-4steH2hZwCzI
-
-###
-@jwtben = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODc1MDJ9.CgLSFZVVWlUQBg53cFsVLrTgNa6fi9Ko1qQpmr3Y-3k
-
-###
-@jwtnapolean = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU0NzIyNzF9.R5NFr4u1c9qx33edObpyR8HEKhh9wn5zoOTuR7vq3CM
+{
+  "product_id": 1,
+  "quantity": 2,
+  "order_id": 1,
+  "status": "carted"
+}

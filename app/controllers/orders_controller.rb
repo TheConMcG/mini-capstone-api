@@ -9,8 +9,6 @@ class OrdersController < ApplicationController
 
     order = Order.new(
       user_id: current_user.id,
-      product_id: params[:product_id],
-      quantity: params[:quantity],
       subtotal: product.price * params[:quantity],
       tax: product.tax * params[:quantity],
       total: product.total * params[:quantity]

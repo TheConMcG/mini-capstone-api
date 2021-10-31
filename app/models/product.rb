@@ -10,6 +10,8 @@ class Product < ApplicationRecord
 
   has_many :orders
 
+  has_many :carted_products
+
   has_many :images
 
   has_many :category_products
