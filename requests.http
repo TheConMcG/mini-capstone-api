@@ -5,16 +5,16 @@
 @jwtben = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODc1MDJ9.CgLSFZVVWlUQBg53cFsVLrTgNa6fi9Ko1qQpmr3Y-3k
 
 ###
-@jwtnapolean = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU3ODQwMzV9.Qy92ave1kIABnVyndMetEWSWPYlIAdtk1sakdnCKbWA
+@jwtnapolean = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU4OTYwMTl9.83JCUobU1y_thOSMsDuH7iD92VgVSYlUUoSVrERUZxQ
 
-###
+### Products index
 GET http://localhost:3000/products.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUyOTIyMDB9.SL8k3Nk4q9Ol9QAqg3hQQJXGQv_NC2bD_-gY7ilqUmA
 
-###
+### Products show
 GET http://localhost:3000/products/1.json
 
-###
+### Products create
 POST http://localhost:3000/products.json
 content-type: application/json
 Authorization: Bearer {{jwtnapolean}}
@@ -26,7 +26,7 @@ Authorization: Bearer {{jwtnapolean}}
   "supplier_id": 2
 }
 
-###
+### Products update
 PATCH http://localhost:3000/products/8.json
 content-type: application/json
 Authorization: Bearer {{jwtben}}
@@ -37,11 +37,11 @@ Authorization: Bearer {{jwtben}}
   "description": "used by vegetarians for bbq"
 }
 
-###
+### Products delete
 DELETE http://localhost:3000/products/8.json
 Authorization: Bearer {{jwtben}}
 
-###
+### Suppliers create
 POST http://localhost:3000/suppliers.json
 content-type: application/json
 
@@ -76,10 +76,6 @@ POST http://localhost:3000/orders.json
 Content-Type: application/json
 Authorization: Bearer {{jwtnapolean}}
 
-{
- 
-  }
-
 ### Orders index
 GET http://localhost:3000/orders.json
 Authorization: Bearer {{jwtnapolean}}
@@ -97,7 +93,7 @@ Authorization: Bearer {{jwtnapolean}}
   "url": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Ffresh-green-apple-26821143.jpg&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fgreen-apple.html&tbnid=M5m_hiAFCtinwM&vet=12ahUKEwi_5IjXg-zzAhWjoK0KHaFcBK8QMygGegUIARDRAQ..i&docid=PJztneRzqQ6dfM&w=800&h=533&q=apple%20stock%20photo&ved=2ahUKEwi_5IjXg-zzAhWjoK0KHaFcBK8QMygGegUIARDRAQ"
 }
 
-### Create carted_products
+### CartedProducts create
 POST http://localhost:3000/carted_products.json
 content-type: application/json
 Authorization: Bearer {{jwtnapolean}}
@@ -111,3 +107,7 @@ Authorization: Bearer {{jwtnapolean}}
 ### CartedProducts index
 GET http://localhost:3000/carted_products.json
 Authorization: Bearer {{jwtnapolean}}
+
+### CartedProducts destroy
+DELETE http://localhost:3000/carted_products/1.json
+Authorization: Bearer {{jwtben}}
