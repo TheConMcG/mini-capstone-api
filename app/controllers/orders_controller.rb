@@ -27,19 +27,19 @@ class OrdersController < ApplicationController
       item.order_id = order.id
       item.save
     end
-    render json: order.as_json
+    render json: order
   end
 
 
   def index
     orders = Order.where(user_id: current_user.id)
-    render json: orders.as_json
+    render json: orders
   end
 
   
   def show
     order = Order.find_by(id: params[:id], user_id: current_user.id)
-    render json: order.as_json
+    render json: order
   end
 
 end

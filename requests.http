@@ -8,14 +8,14 @@
 @jwtnapolean = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU4OTYwMTl9.83JCUobU1y_thOSMsDuH7iD92VgVSYlUUoSVrERUZxQ
 
 ### Products index
-GET http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUyOTIyMDB9.SL8k3Nk4q9Ol9QAqg3hQQJXGQv_NC2bD_-gY7ilqUmA
+GET http://localhost:3000/products
+Authorization: Bearer {{jwtnapolean}}
 
 ### Products show
-GET http://localhost:3000/products/1.json
+GET http://localhost:3000/products/1
 
 ### Products create
-POST http://localhost:3000/products.json
+POST http://localhost:3000/products
 content-type: application/json
 Authorization: Bearer {{jwtnapolean}}
 
@@ -27,9 +27,9 @@ Authorization: Bearer {{jwtnapolean}}
 }
 
 ### Products update
-PATCH http://localhost:3000/products/8.json
+PATCH http://localhost:3000/products/8
 content-type: application/json
-Authorization: Bearer {{jwtben}}
+Authorization: Bearer {{jwtnapolean}}
 
 {
   "name": "jackfruitsi",
@@ -38,11 +38,11 @@ Authorization: Bearer {{jwtben}}
 }
 
 ### Products delete
-DELETE http://localhost:3000/products/8.json
-Authorization: Bearer {{jwtben}}
+DELETE http://localhost:3000/products/8
+Authorization: Bearer {{jwtnapolean}}
 
 ### Suppliers create
-POST http://localhost:3000/suppliers.json
+POST http://localhost:3000/suppliers
 content-type: application/json
 
 {
@@ -72,20 +72,20 @@ Content-Type: application/json
 }
 
 ### Orders create
-POST http://localhost:3000/orders.json
+POST http://localhost:3000/orders
 Content-Type: application/json
 Authorization: Bearer {{jwtnapolean}}
 
 ### Orders index
-GET http://localhost:3000/orders.json
+GET http://localhost:3000/orders
 Authorization: Bearer {{jwtnapolean}}
 
 ### Orders show
-GET http://localhost:3000/orders/15.json
+GET http://localhost:3000/orders/15
 Authorization: Bearer {{jwtnapolean}}
 
 ### Image update
-PATCH http://localhost:3000/images/5.json
+PATCH http://localhost:3000/images/5
 content-type: application/json
 Authorization: Bearer {{jwtnapolean}}
 
@@ -94,7 +94,7 @@ Authorization: Bearer {{jwtnapolean}}
 }
 
 ### CartedProducts create
-POST http://localhost:3000/carted_products.json
+POST http://localhost:3000/carted_products
 content-type: application/json
 Authorization: Bearer {{jwtnapolean}}
 
@@ -105,9 +105,9 @@ Authorization: Bearer {{jwtnapolean}}
 }
 
 ### CartedProducts index
-GET http://localhost:3000/carted_products.json
+GET http://localhost:3000/carted_products
 Authorization: Bearer {{jwtnapolean}}
 
 ### CartedProducts destroy
-DELETE http://localhost:3000/carted_products/1.json
-Authorization: Bearer {{jwtben}}
+DELETE http://localhost:3000/carted_products/1
+Authorization: Bearer {{jwtnapolean}}
