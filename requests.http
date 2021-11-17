@@ -1,26 +1,26 @@
-###
-@jwtgeorge = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUzNzc2NTV9.7xJ2Ohn9dfr2TVCuqfNhWesNTLEYaF-4steH2hZwCzI
+# ###
+# @jwtgeorge = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUzNzc2NTV9.7xJ2Ohn9dfr2TVCuqfNhWesNTLEYaF-4steH2hZwCzI
+
+# ###
+# @jwtben = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODc1MDJ9.CgLSFZVVWlUQBg53cFsVLrTgNa6fi9Ko1qQpmr3Y-3k
 
 ###
-@jwtben = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODc1MDJ9.CgLSFZVVWlUQBg53cFsVLrTgNa6fi9Ko1qQpmr3Y-3k
-
-###
-@jwtnapolean = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU4OTYwMTl9.83JCUobU1y_thOSMsDuH7iD92VgVSYlUUoSVrERUZxQ
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzcyMDEwNzN9.67-_DXGC1c8wZOZWbeddvYvdcyvB7Sipt_Wgm9hLDr4
 
 ### Products index
-GET http://localhost:3000/products
-Authorization: Bearer {{jwtnapolean}}
+GET http://localhost:3000/products.json
+Authorization: Bearer {{jwt}}
 
 ### Products show
-GET http://localhost:3000/products/1
+GET http://localhost:3000/products/1.json
 
 ### Products create
 POST http://localhost:3000/products
 content-type: application/json
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 {
-  "name": "Eggs: one dozen",
+  "name": "Eggs: two dozen",
   "price": 4,
   "description": "fried, scrambled, boiled. delicious and nutritious",
   "supplier_id": 2
@@ -29,7 +29,7 @@ Authorization: Bearer {{jwtnapolean}}
 ### Products update
 PATCH http://localhost:3000/products/8
 content-type: application/json
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 {
   "name": "jackfruitsi",
@@ -39,7 +39,7 @@ Authorization: Bearer {{jwtnapolean}}
 
 ### Products delete
 DELETE http://localhost:3000/products/8
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 ### Suppliers create
 POST http://localhost:3000/suppliers
@@ -74,20 +74,20 @@ Content-Type: application/json
 ### Orders create
 POST http://localhost:3000/orders
 Content-Type: application/json
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 ### Orders index
 GET http://localhost:3000/orders
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 ### Orders show
 GET http://localhost:3000/orders/15
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 ### Image update
 PATCH http://localhost:3000/images/5
 content-type: application/json
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 {
   "url": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Ffresh-green-apple-26821143.jpg&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fgreen-apple.html&tbnid=M5m_hiAFCtinwM&vet=12ahUKEwi_5IjXg-zzAhWjoK0KHaFcBK8QMygGegUIARDRAQ..i&docid=PJztneRzqQ6dfM&w=800&h=533&q=apple%20stock%20photo&ved=2ahUKEwi_5IjXg-zzAhWjoK0KHaFcBK8QMygGegUIARDRAQ"
@@ -96,7 +96,7 @@ Authorization: Bearer {{jwtnapolean}}
 ### CartedProducts create
 POST http://localhost:3000/carted_products
 content-type: application/json
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 {
   "product_id": 1,
@@ -106,8 +106,8 @@ Authorization: Bearer {{jwtnapolean}}
 
 ### CartedProducts index
 GET http://localhost:3000/carted_products
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}
 
 ### CartedProducts destroy
 DELETE http://localhost:3000/carted_products/1
-Authorization: Bearer {{jwtnapolean}}
+Authorization: Bearer {{jwt}}

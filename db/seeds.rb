@@ -12,5 +12,3 @@
 # Products.each do |product|
 #   image = Image.new(url: product.image_url, product_id: product.id)
 # end
-
-
